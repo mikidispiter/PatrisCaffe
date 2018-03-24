@@ -30,12 +30,12 @@
                 android:layout_marginEnd="4dp"
                 android:layout_marginStart="4dp"
                 android:layout_marginTop="6dp"
-                android:background="@color/colorPrimary"
+                android:background="@drawable/patris_okvir"
                 android:fontFamily="sans-serif"
                 android:gravity="center_horizontal"
                 android:text="patris coffee"
                 android:textAllCaps="true"
-                android:textColor="@android:color/black"
+                android:textColor="#fff"
                 android:textSize="44dp"
                 android:textStyle="bold" />
 
@@ -49,7 +49,7 @@
                 android:layout_marginTop="16dp"
                 android:fontFamily="sans-serif"
                 android:gravity="center_horizontal"
-                android:text="@string/Meni"
+                android:text="Meni"
                 android:textAllCaps="true"
                 android:textColor="@android:color/black"
                 android:textSize="32sp"
@@ -113,7 +113,7 @@
                 android:layout_marginEnd="8dp"
                 android:layout_marginLeft="8dp"
                 android:layout_marginStart="8dp"
-                android:layout_marginTop="4dp"
+                android:layout_marginTop="6dp"
                 android:background="@drawable/rounded_layout"
                 android:orientation="horizontal">
 
@@ -163,7 +163,7 @@
                 android:layout_marginEnd="8dp"
                 android:layout_marginLeft="8dp"
                 android:layout_marginStart="8dp"
-                android:layout_marginTop="4dp"
+                android:layout_marginTop="6dp"
                 android:background="@drawable/rounded_layout"
                 android:orientation="horizontal">
 
@@ -208,7 +208,7 @@
                 android:layout_marginEnd="8dp"
                 android:layout_marginLeft="8dp"
                 android:layout_marginStart="8dp"
-                android:layout_marginTop="4dp"
+                android:layout_marginTop="6dp"
                 android:background="@drawable/rounded_layout"
                 android:orientation="horizontal">
 
@@ -258,7 +258,7 @@
                 android:layout_marginEnd="8dp"
                 android:layout_marginLeft="8dp"
                 android:layout_marginStart="8dp"
-                android:layout_marginTop="4dp"
+                android:layout_marginTop="6dp"
                 android:background="@drawable/rounded_layout"
                 android:orientation="horizontal">
 
@@ -308,7 +308,7 @@
                 android:layout_marginEnd="8dp"
                 android:layout_marginLeft="8dp"
                 android:layout_marginStart="8dp"
-                android:layout_marginTop="4dp"
+                android:layout_marginTop="6dp"
                 android:background="@drawable/rounded_layout"
                 android:orientation="horizontal">
 
@@ -357,42 +357,42 @@
                 android:layout_marginEnd="8dp"
                 android:layout_marginLeft="8dp"
                 android:layout_marginStart="8dp"
-                android:layout_marginTop="4dp"
+                android:layout_marginTop="6dp"
                 android:background="@drawable/rounded_layout"
                 android:orientation="horizontal">
 
 
                 <ImageView
-                    android:id="@+id/imageInstant"
+                    android:id="@+id/imageFrapucino"
                     android:layout_width="70dp"
                     android:layout_height="match_parent"
                     android:contentDescription="@string/todo"
                     android:paddingEnd="12dp"
                     android:paddingLeft="4dp"
                     android:paddingStart="8dp"
-                    android:src="@drawable/instant" />
+                    android:src="@drawable/frapucino" />
 
                 <TextView
-                    android:id="@+id/textInstant"
+                    android:id="@+id/textFrapucino"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:fontFamily="sans-serif"
                     android:paddingLeft="20dp"
                     android:paddingTop="12dp"
-                    android:text="Instant . . . . . . . . . . . . . . . ."
+                    android:text="Frapucino . . . . . . . . . . . . . . . ."
                     android:textColor="@android:color/black"
                     android:textSize="28sp"
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/cenaInstant"
+                    android:id="@+id/cenaFrapucino"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingLeft="2dp"
                     android:paddingRight="16dp"
                     android:paddingTop="2dp"
-                    android:text="180"
+                    android:text="200"
                     android:textColor="@android:color/black"
                     android:textSize="24sp"
                     android:textStyle="bold" />
@@ -406,42 +406,42 @@
                 android:layout_marginEnd="8dp"
                 android:layout_marginLeft="8dp"
                 android:layout_marginStart="8dp"
-                android:layout_marginTop="4dp"
+                android:layout_marginTop="6dp"
                 android:background="@drawable/rounded_layout"
                 android:orientation="horizontal">
 
 
                 <ImageView
-                    android:id="@+id/imageInstant"
+                    android:id="@+id/imageBrazil"
                     android:layout_width="70dp"
                     android:layout_height="match_parent"
                     android:contentDescription="@string/todo"
                     android:paddingEnd="12dp"
                     android:paddingLeft="4dp"
                     android:paddingStart="8dp"
-                    android:src="@drawable/instant" />
+                    android:src="@drawable/brazil" />
 
                 <TextView
-                    android:id="@+id/textInstant"
+                    android:id="@+id/textBrazil"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:fontFamily="sans-serif"
                     android:paddingLeft="20dp"
                     android:paddingTop="12dp"
-                    android:text="Instant . . . . . . . . . . . . . . . ."
+                    android:text="Brazil . . . . . . . . . . . . . . . ."
                     android:textColor="@android:color/black"
                     android:textSize="28sp"
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/cenaInstant"
+                    android:id="@+id/cenaBrazil"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingLeft="2dp"
                     android:paddingRight="16dp"
                     android:paddingTop="2dp"
-                    android:text="180"
+                    android:text="220"
                     android:textColor="@android:color/black"
                     android:textSize="24sp"
                     android:textStyle="bold" />
@@ -456,13 +456,17 @@
 
     <Button
         android:id="@+id/buttonPorudzbina"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="66dp"
         android:layout_marginBottom="8dp"
-        android:layout_marginLeft="100dp"
+        android:background="@drawable/rounded_button"
         android:gravity="center_horizontal"
-        android:text="@string/pogledaj_porudzbinu"
-        app:layout_constraintBottom_toBottomOf="@+id/scrollView2"
-        app:layout_constraintLeft_toLeftOf="parent" />
+        android:text="pogledaj porudžbinu"
+        android:textColor="#fff"
+        android:textSize="24sp"
+        android:paddingTop="15dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginEnd="18dp"
+        app:layout_constraintBottom_toBottomOf="@+id/scrollView2" />
 
 </android.support.constraint.ConstraintLayout>
