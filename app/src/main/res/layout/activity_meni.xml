@@ -1,73 +1,468 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    android:orientation="vertical"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.example.mikidispiter.patriscaffe.Meni">
 
 
-    <TextView
-        android:id="@+id/textView3"
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/scrollView2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorAccent"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="6dp"
+                android:background="@color/colorPrimary"
+                android:fontFamily="sans-serif"
+                android:gravity="center_horizontal"
+                android:text="patris coffee"
+                android:textAllCaps="true"
+                android:textColor="@android:color/black"
+                android:textSize="44dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="fill_parent"
+                android:layout_height="34dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:fontFamily="sans-serif"
+                android:gravity="center_horizontal"
+                android:text="@string/Meni"
+                android:textAllCaps="true"
+                android:textColor="@android:color/black"
+                android:textSize="32sp"
+                android:textStyle="bold" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="6dp"
+                android:background="@drawable/rounded_layout"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imageTurska"
+                    android:layout_width="74dp"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@string/todo"
+                    android:paddingBottom="2dp"
+                    android:paddingEnd="2dp"
+                    android:paddingStart="4dp"
+                    android:src="@drawable/turska" />
+
+                <TextView
+                    android:id="@+id/textTurska"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:fontFamily="sans-serif"
+                    android:paddingLeft="12dp"
+                    android:paddingTop="12dp"
+                    android:text="Turska  . . . . . . . . . . . . "
+                    android:textColor="@android:color/black"
+                    android:textSize="28sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/cenaTurska"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingEnd="16dp"
+                    android:paddingLeft="2dp"
+                    android:paddingRight="16dp"
+                    android:paddingStart="2dp"
+                    android:paddingTop="6dp"
+                    android:text="90"
+                    android:textColor="@android:color/black"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/rounded_layout"
+                android:orientation="horizontal">
+
+
+                <ImageView
+                    android:id="@+id/imageLatte"
+                    android:layout_width="70dp"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@string/todo"
+                    android:paddingEnd="12dp"
+                    android:paddingLeft="4dp"
+                    android:paddingStart="8dp"
+                    android:src="@drawable/latte" />
+
+                <TextView
+                    android:id="@+id/textLatte"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:fontFamily="sans-serif"
+                    android:paddingLeft="20dp"
+                    android:paddingTop="12dp"
+                    android:text="Latte  . . . . . . . . . . . . . . . ."
+                    android:textColor="@android:color/black"
+                    android:textSize="28sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/cenaLatte"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="2dp"
+                    android:paddingRight="16dp"
+                    android:paddingTop="2dp"
+                    android:text="150"
+                    android:textColor="@android:color/black"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/rounded_layout"
+                android:orientation="horizontal">
+
+
+                <ImageView
+                    android:id="@+id/imageCapucino"
+                    android:layout_width="70dp"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@string/todo"
+                    android:paddingLeft="6dp"
+                    android:src="@drawable/capucino" />
+
+                <TextView
+                    android:id="@+id/textCapucino"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:fontFamily="sans-serif"
+                    android:paddingLeft="20dp"
+                    android:paddingTop="12dp"
+                    android:text="Capucino  . . . . . . . . . . "
+                    android:textColor="@android:color/black"
+                    android:textSize="28sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/cenaCapucino"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingRight="16dp"
+                    android:paddingTop="8dp"
+                    android:text="130"
+                    android:textColor="@android:color/black"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/rounded_layout"
+                android:orientation="horizontal">
+
+
+                <ImageView
+                    android:id="@+id/imageMoca"
+                    android:layout_width="70dp"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@string/todo"
+                    android:paddingEnd="12dp"
+                    android:paddingLeft="4dp"
+                    android:paddingStart="8dp"
+                    android:src="@drawable/moca" />
+
+                <TextView
+                    android:id="@+id/textMoca"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:fontFamily="sans-serif"
+                    android:paddingLeft="20dp"
+                    android:paddingTop="12dp"
+                    android:text="Moca  . . . . . . . . . . . . . . . ."
+                    android:textColor="@android:color/black"
+                    android:textSize="28sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/cenaMoca"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="2dp"
+                    android:paddingRight="16dp"
+                    android:paddingTop="2dp"
+                    android:text="150"
+                    android:textColor="@android:color/black"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/rounded_layout"
+                android:orientation="horizontal">
+
+
+                <ImageView
+                    android:id="@+id/imageMaroco"
+                    android:layout_width="70dp"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@string/todo"
+                    android:paddingEnd="12dp"
+                    android:paddingLeft="4dp"
+                    android:paddingStart="8dp"
+                    android:src="@drawable/maroco" />
+
+                <TextView
+                    android:id="@+id/textMaroco"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:fontFamily="sans-serif"
+                    android:paddingLeft="20dp"
+                    android:paddingTop="12dp"
+                    android:text="Maroco  . . . . . . . . . . . . . . . ."
+                    android:textColor="@android:color/black"
+                    android:textSize="28sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/cenaMaroco"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="2dp"
+                    android:paddingRight="16dp"
+                    android:paddingTop="2dp"
+                    android:text="220"
+                    android:textColor="@android:color/black"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/rounded_layout"
+                android:orientation="horizontal">
+
+
+                <ImageView
+                    android:id="@+id/imageInstant"
+                    android:layout_width="70dp"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@string/todo"
+                    android:paddingEnd="12dp"
+                    android:paddingLeft="4dp"
+                    android:paddingStart="8dp"
+                    android:src="@drawable/instant" />
+
+                <TextView
+                    android:id="@+id/textInstant"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:fontFamily="sans-serif"
+                    android:paddingLeft="20dp"
+                    android:paddingTop="12dp"
+                    android:text="Instant . . . . . . . . . . . . . . . ."
+                    android:textColor="@android:color/black"
+                    android:textSize="28sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/cenaInstant"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="2dp"
+                    android:paddingRight="16dp"
+                    android:paddingTop="2dp"
+                    android:text="180"
+                    android:textColor="@android:color/black"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/rounded_layout"
+                android:orientation="horizontal">
+
+
+                <ImageView
+                    android:id="@+id/imageInstant"
+                    android:layout_width="70dp"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@string/todo"
+                    android:paddingEnd="12dp"
+                    android:paddingLeft="4dp"
+                    android:paddingStart="8dp"
+                    android:src="@drawable/instant" />
+
+                <TextView
+                    android:id="@+id/textInstant"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:fontFamily="sans-serif"
+                    android:paddingLeft="20dp"
+                    android:paddingTop="12dp"
+                    android:text="Instant . . . . . . . . . . . . . . . ."
+                    android:textColor="@android:color/black"
+                    android:textSize="28sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/cenaInstant"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="2dp"
+                    android:paddingRight="16dp"
+                    android:paddingTop="2dp"
+                    android:text="180"
+                    android:textColor="@android:color/black"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/rounded_layout"
+                android:orientation="horizontal">
+
+
+                <ImageView
+                    android:id="@+id/imageInstant"
+                    android:layout_width="70dp"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@string/todo"
+                    android:paddingEnd="12dp"
+                    android:paddingLeft="4dp"
+                    android:paddingStart="8dp"
+                    android:src="@drawable/instant" />
+
+                <TextView
+                    android:id="@+id/textInstant"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:fontFamily="sans-serif"
+                    android:paddingLeft="20dp"
+                    android:paddingTop="12dp"
+                    android:text="Instant . . . . . . . . . . . . . . . ."
+                    android:textColor="@android:color/black"
+                    android:textSize="28sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/cenaInstant"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="2dp"
+                    android:paddingRight="16dp"
+                    android:paddingTop="2dp"
+                    android:text="180"
+                    android:textColor="@android:color/black"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <Button
+        android:id="@+id/buttonPorudzbina"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:text="@string/Meni"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="368dp"
-        android:layout_height="425dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:id="@+id/imageView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:srcCompat="@android:drawable/alert_dark_frame" />
-
-            <TextView
-                android:id="@+id/textView4"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="@string/Domaca" />
-        </LinearLayout>
-    </LinearLayout>
-
-    <Button
-        android:id="@+id/button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginLeft="100dp"
+        android:gravity="center_horizontal"
         android:text="@string/pogledaj_porudzbinu"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+        app:layout_constraintBottom_toBottomOf="@+id/scrollView2"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
 </android.support.constraint.ConstraintLayout>
