@@ -55,91 +55,119 @@
                 android:textSize="32sp"
                 android:textStyle="bold" />
 
-
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="6dp"
-                android:background="@drawable/rounded_layout"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:id="@+id/imageTurska"
-                    android:layout_width="74dp"
-                    android:layout_height="match_parent"
-                    android:contentDescription="@string/todo"
-                    android:paddingBottom="2dp"
-                    android:paddingEnd="2dp"
-                    android:paddingStart="4dp"
-                    android:src="@drawable/turska" />
-
-                <TextView
-                    android:id="@+id/textTurska"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:fontFamily="sans-serif"
-                    android:paddingLeft="12dp"
-                    android:paddingTop="12dp"
-                    android:text="Turska  . . . . . . . . . . . . "
-                    android:textColor="@android:color/black"
-                    android:textSize="28sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/cenaTurska"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingEnd="16dp"
-                    android:paddingLeft="2dp"
-                    android:paddingRight="16dp"
-                    android:paddingStart="2dp"
-                    android:paddingTop="6dp"
-                    android:text="90"
-                    android:textColor="@android:color/black"
-                    android:textSize="24sp"
-                    android:textStyle="bold" />
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
 
-            </LinearLayout>
+                <LinearLayout
+                    android:onClick="Turska"
+                    android:id="@+id/Turska"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="6dp"
+                    android:background="@drawable/rounded_layout"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="74dp"
+                        android:layout_height="match_parent"
+                        android:contentDescription="@string/todo"
+                        android:paddingBottom="2dp"
+                        android:paddingEnd="2dp"
+                        android:paddingStart="4dp"
+                        android:src="@drawable/turska" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:fontFamily="sans-serif"
+                        android:paddingLeft="12dp"
+                        android:paddingTop="12dp"
+                        android:text="Turska  . . . . . . . . . . . . "
+                        android:textColor="@android:color/black"
+                        android:textSize="28sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/cenaTurska"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingEnd="16dp"
+                        android:paddingLeft="2dp"
+                        android:paddingRight="16dp"
+                        android:paddingStart="2dp"
+                        android:paddingTop="6dp"
+                        android:text="90"
+                        android:textColor="@android:color/black"
+                        android:textSize="24sp"
+                        android:textStyle="bold" />
+
+
+                </LinearLayout>
 
             <LinearLayout
+                android:visibility="gone"
+                android:id="@+id/turska1"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginLeft="8dp"
                 android:layout_marginStart="8dp"
-                android:orientation="horizontal"
-                app:layout_constraintBottom_toBottomOf="@+id/layout1">
+                android:orientation="horizontal">
 
-                <CheckBox
+
+                <TextView
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="9dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
+                    android:text="1 kafa" />
+
+                <CheckBox
+                    android:id="@+id/turskaSlag1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginStart="16dp"
                     android:layout_marginTop="12dp"
+                    android:buttonTint="#222"
+                    android:checked="false"
                     android:text="slag"
                     android:textSize="24sp" />
 
                 <CheckBox
+                    android:buttonTint="#222"
+                    android:id="@+id/turskaSecer1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="40dp"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginStart="16dp"
                     android:layout_marginTop="12dp"
+                    android:checked="false"
                     android:text="secer"
                     android:textSize="24sp" />
 
                 <Button
+                    android:onClick="turskaManje"
+                    android:id="@+id/turskaManje"
                     android:layout_width="35dp"
                     android:layout_height="38dp"
                     android:layout_marginEnd="8dp"
-                    android:layout_marginStart="20dp"
+                    android:layout_marginStart="16dp"
                     android:layout_marginTop="8dp"
-                    android:text="+" />
+                    android:text="+"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginLeft="20dp" />
 
                 <TextView
+                    android:id="@+id/turskaBrojac"
+                    android:textAlignment="center"
                     android:layout_width="15dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
@@ -147,14 +175,62 @@
                     android:text="1" />
 
                 <Button
+                    android:onClick="turskaVise"
+                    android:id="@+id/turskaVise"
                     android:layout_width="36dp"
                     android:layout_height="38dp"
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="8dp"
-                    android:text="-" />
+                    android:text="-"
+                    android:layout_marginLeft="8dp" />
 
             </LinearLayout>
 
+                <LinearLayout
+                    android:visibility="gone"
+                    android:id="@+id/turska2"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginStart="8dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginTop="9dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="2 kafa" />
+
+                    <CheckBox
+                        android:id="@+id/turskaSlag2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="12dp"
+                        android:checked="false"
+                        android:text="slag"
+                        android:buttonTint="#222"
+                        android:textSize="24sp" />
+
+                    <CheckBox
+                        android:id="@+id/turskaSecer2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="40dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="12dp"
+                        android:buttonTint="#222"
+                        android:checked="false"
+                        android:text="secer"
+                        android:textSize="24sp" />
+
+
+                </LinearLayout>
+
+            </LinearLayout>
 
 
             <LinearLayout
@@ -505,6 +581,7 @@
     </ScrollView>
 
     <Button
+        android:onClick="dodaj"
         android:id="@+id/buttonPorudzbina"
         android:layout_width="match_parent"
         android:layout_height="66dp"
