@@ -20,63 +20,33 @@ class Meni : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_meni)
+        bieda() //inicializacia arraylistov (len 1 raz sa sprevadza)
     }
 
-    var selected = ""
+//Inicializacia promenljivih aj valsov
 
+    var lista2 = ArrayList<LinearLayout>(20)
+    var lista3 = ArrayList<TextView>(20)
+    var lista4 = ArrayList<CheckBox>(20)
+    var listaDodaci = ArrayList<ArrayList<CheckBox>>(20)
+    var listaCena = ArrayList<TextView>(20)
+    var turskaDodaci = ArrayList<CheckBox>(4)
+    var latteDodaci = ArrayList<CheckBox>(4)
 
-    fun Kafa(view: View) {
-        if (selected == "") {
-            when (view) {
-                Turska -> {
-                    selected = "Turska"; kava = 0
-                }
-                Latte -> {
-                    selected = "Latte"; kava = 1
-                }
-                Capucino -> {
-                    selected = "Capucino"; kava = 2
-                }
-                Moca -> {
-                    selected = "Moca"; kava = 3
-                }
-                Maroco -> {
-                    selected = "Maroco"; kava = 4
-                }
-                Instant -> {
-                    selected = "Instant"; kava = 5
-                }
-                Frapucino -> {
-                    selected = "Frapucino"; kava = 6
-                }
-                Brazil -> {
-                    selected = "Brazil"; kava = 7
-                }
-                else -> {
-                    selected = "pogresna kafa!??"; kava = 8
-                }
-            }
-        } else {
-            brojac = 1
-            selected = ""
-        }
-        bieda()
-        closePrevs()
-    }
+    var kava: Int = 8
+    var counterbieda = 1
+    var brojac: Int = 1
+    var dodajNaRacun: Int = 0
+    var ukupnaCena: Int = 0
 
-
+    //    Tu sa 1-raz inicializuju listi skrz modularnosti kodu (mali bi bit oznacenie z adekvatnima menami)
+//    Abi sa primenili secke kavi potrebne je len poplnit listi aj linkuvat xml
     fun bieda() {
         if (counterbieda < 2) {
+            counterbieda += 1
 
             turskaDodaci.addAll(listOf(turskaSlag1, turskaSecer1, turskaSlag2, turskaSecer2))
             latteDodaci.addAll(listOf(latteSlag1, latteSecer1, latteSlag2, latteSecer2))
-
-            for (i in turskaDodaci) {
-                lista.add(i)
-            }
-            for (i in latteDodaci) {
-                lista.add(i)
-            }
 
             lista2.addAll(listOf(turska2, latte2, turska1, latte1))
 
@@ -86,21 +56,43 @@ class Meni : AppCompatActivity() {
 
             listaDodaci.addAll(listOf(turskaDodaci, latteDodaci))
 
-        }
-        counterbieda += 1
-    }
-
-    fun closePrevs() {
-        when (selected) {
-            "Turska" -> turska1.visibility = View.VISIBLE
-            "Latte" -> latte1.visibility = View.VISIBLE
-            else -> closeAll()
+            listaCena.addAll(listOf(cenaTurska, cenaLatte))
         }
     }
 
-    fun closeAll() {
-        for (i in lista) {
-            i.isChecked = false
+
+    //    Tento selektor bude robit zakazdim ked sa klikne edom z hlavnich layoutov kazdej vrste kave
+    fun Kafa(view: View) {
+        if (kava == 8) {
+            when (view) {
+                Turska -> kava = 0
+                Latte -> kava = 1
+                Capucino -> kava = 2
+                Moca -> kava = 3
+                Maroco -> kava = 4
+                Instant -> kava = 5
+                Frapucino -> kava = 6
+                Brazil -> kava = 7
+                else -> kava = 8
+            }
+        } else kava = 8
+        managePrevs()
+    }
+
+
+    //    Upravljania z prikazom pod-meniov (otvori odhovarajuci alebo zatvori secke u zavisnosti od selektovanej kave)
+    fun managePrevs() {
+        if (kava < 8) lista2[kava + lista2.size / 2].visibility = View.VISIBLE
+        else closeAllPrevs()
+    }
+
+    //    Zatvarania seckich pod-meniov
+    fun closeAllPrevs() {
+        brojac = 1
+        for (i in listaDodaci.indices) {
+            for (j in listaDodaci[i].indices) {
+                listaDodaci[i][j].isChecked = false
+            }
         }
         for (i in lista2) {
             i.visibility = View.GONE
@@ -111,31 +103,8 @@ class Meni : AppCompatActivity() {
     }
 
 
-    var counterbieda = 1
-    var lista = ArrayList<CheckBox>(20)
-    var lista2 = ArrayList<LinearLayout>(20)
-    var lista3 = ArrayList<TextView>(20)
-    var lista4 = ArrayList<CheckBox>(20)
-    var listaDodaci = ArrayList<ArrayList<CheckBox>>(20)
-
-    var turskaDodaci = ArrayList<CheckBox>(4)
-    var latteDodaci = ArrayList<CheckBox>(4)
-    var brojac: Int = 1
-    var dodajNaRacun: Int = 0
-    var ukupnaCena: Int = 0
-
-    var kava: Int = 0
-
+    //    Zveci broj kavov, otvori 2. pod meni, refreshuje brojac
     fun kafaVise(view: View) {
-        when (view) {
-            turskaVise -> {
-                kava = 0
-            }
-            latteVise -> {
-                kava = 1
-            }
-
-        }
         brojac = lista3[kava].text.toString().toInt()
         if (brojac < 2) {
             brojac += 1
@@ -145,17 +114,8 @@ class Meni : AppCompatActivity() {
 
     }
 
+    //    Zmensi broj kavov, zatvori 2. pod meni, vipise novi brojac, *v buducnosti: pozve funkciju za zatvarania checkboxu
     fun kafaManje(view: View) {
-
-        when (view) {
-            turskaManje -> {
-                kava = 0
-            }
-            latteManje -> {
-                kava = 1
-            }
-
-        }
         brojac = lista3[kava].text.toString().toInt()
         if (brojac > 1) {
             brojac -= 1
@@ -168,6 +128,10 @@ class Meni : AppCompatActivity() {
     }
 
 
+    //    Dodaj kavi na racun (zateraz sa aktivira klikalim gombika Pogledaj Racun)
+//    dostane vrednosti dodatkov (z checkboxov)
+//    formira cenu shodne vibratej kave aj vibratima dodatkami, vipise cenu
+//    restartuje layouti (selektuvana kava je 8(ani edna z kavov))
     fun dodaj(view: View) {
 
         var dodaci = ArrayList<Boolean>(4)
@@ -176,36 +140,19 @@ class Meni : AppCompatActivity() {
         var dodatak3: Boolean = false
         var dodatak4: Boolean = false
         dodaci.addAll(listOf(dodatak1, dodatak2, dodatak3, dodatak4))
-        var cenaKafe: Int
 
-
-//        when (selected) {
-//            "Turska" -> {
-//
-//                    for (i in dodaci.indices){dodaci[i] = turskaDodaci[i].isChecked}
-//                    cenaKafe = 90
-//            }
-//            "Latte" -> {
-//                    for (i in dodaci.indices){dodaci[i] = latteDodaci[i].isChecked}
-//                    cenaKafe = 150
-//            }
-//            else -> {cenaKafe = 0}
-//
-//
-//        }
         for (i in dodaci.indices) {
             dodaci[i] = listaDodaci[kava][i].isChecked
         }
-        cenaKafe = 90
-        dodajNaRacun += brojac * cenaKafe
+
+        dodajNaRacun += brojac * listaCena[kava].text.toString().toInt()
         if (dodaci[0]) dodajNaRacun += 10
         if (dodaci[1]) dodajNaRacun += 15
         if (dodaci[2]) dodajNaRacun += 10
         if (dodaci[3]) dodajNaRacun += 15
 
-        selected = ""
-        brojac = 1
-        closePrevs()
+        kava = 8
+        managePrevs()
         ukupnaCena += dodajNaRacun
         dodajNaRacun = 0
         buttonPorudzbina.text = ukupnaCena.toString()
