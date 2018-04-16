@@ -452,6 +452,125 @@
             </LinearLayout>
 
             <LinearLayout
+                android:visibility="gone"
+                android:id="@+id/capucino1"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:orientation="horizontal">
+
+
+                <TextView
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="9dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1 kafa" />
+
+                <CheckBox
+                    android:id="@+id/capucinoSlag1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="12dp"
+                    android:buttonTint="#222"
+                    android:checked="false"
+                    android:text="slag"
+                    android:textSize="24sp" />
+
+                <CheckBox
+                    android:buttonTint="#222"
+                    android:id="@+id/capucinoSecer1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="12dp"
+                    android:checked="false"
+                    android:text="secer"
+                    android:textSize="24sp" />
+
+                <Button
+                    android:onClick="kafaManje"
+                    android:id="@+id/capucinoManje"
+                    android:layout_width="35dp"
+                    android:layout_height="38dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:text="+"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginLeft="20dp" />
+
+                <TextView
+                    android:id="@+id/capucinoBrojac"
+                    android:textAlignment="center"
+                    android:layout_width="15dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:background="#fff"
+                    android:text="1" />
+
+                <Button
+                    android:onClick="kafaVise"
+                    android:id="@+id/capucinoVise"
+                    android:layout_width="36dp"
+                    android:layout_height="38dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:text="-"
+                    android:layout_marginLeft="8dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:visibility="gone"
+                android:id="@+id/capucino2"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="9dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2 kafa" />
+
+                <CheckBox
+                    android:id="@+id/capucinoSlag2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="12dp"
+                    android:checked="false"
+                    android:text="slag"
+                    android:buttonTint="#222"
+                    android:textSize="24sp" />
+
+                <CheckBox
+                    android:id="@+id/capucinoSecer2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="12dp"
+                    android:buttonTint="#222"
+                    android:checked="false"
+                    android:text="secer"
+                    android:textSize="24sp" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
                 android:id="@+id/Moca"
                 android:onClick="Kafa"
                 android:layout_width="match_parent"
@@ -502,6 +621,124 @@
 
             </LinearLayout>
 
+            <LinearLayout
+                android:visibility="gone"
+                android:id="@+id/moca1"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:orientation="horizontal">
+
+
+                <TextView
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="9dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1 kafa" />
+
+                <CheckBox
+                    android:id="@+id/mocaSlag1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="12dp"
+                    android:buttonTint="#222"
+                    android:checked="false"
+                    android:text="slag"
+                    android:textSize="24sp" />
+
+                <CheckBox
+                    android:buttonTint="#222"
+                    android:id="@+id/mocaSecer1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="12dp"
+                    android:checked="false"
+                    android:text="secer"
+                    android:textSize="24sp" />
+
+                <Button
+                    android:onClick="kafaManje"
+                    android:id="@+id/mocaManje"
+                    android:layout_width="35dp"
+                    android:layout_height="38dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:text="+"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginLeft="20dp" />
+
+                <TextView
+                    android:id="@+id/mocaBrojac"
+                    android:textAlignment="center"
+                    android:layout_width="15dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:background="#fff"
+                    android:text="1" />
+
+                <Button
+                    android:onClick="kafaVise"
+                    android:id="@+id/mocaVise"
+                    android:layout_width="36dp"
+                    android:layout_height="38dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:text="-"
+                    android:layout_marginLeft="8dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:visibility="gone"
+                android:id="@+id/moca2"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="9dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2 kafa" />
+
+                <CheckBox
+                    android:id="@+id/mocaSlag2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="12dp"
+                    android:checked="false"
+                    android:text="slag"
+                    android:buttonTint="#222"
+                    android:textSize="24sp" />
+
+                <CheckBox
+                    android:id="@+id/mocaSecer2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="12dp"
+                    android:buttonTint="#222"
+                    android:checked="false"
+                    android:text="secer"
+                    android:textSize="24sp" />
+
+
+            </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/Maroco"
@@ -554,6 +791,122 @@
 
             </LinearLayout>
 
+            <LinearLayout
+                android:visibility="gone"
+                android:id="@+id/maroco1"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:orientation="horizontal">
+
+
+                <TextView
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="9dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1 kafa" />
+
+                <CheckBox
+                    android:id="@+id/marocoSlag1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="12dp"
+                    android:buttonTint="#222"
+                    android:checked="false"
+                    android:text="slag"
+                    android:textSize="24sp" />
+
+                <CheckBox
+                    android:buttonTint="#222"
+                    android:id="@+id/marocoSecer1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="12dp"
+                    android:checked="false"
+                    android:text="secer"
+                    android:textSize="24sp" />
+
+                <Button
+                    android:onClick="kafaManje"
+                    android:layout_width="35dp"
+                    android:layout_height="38dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:text="+"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginLeft="20dp" />
+
+                <TextView
+                    android:id="@+id/marocoBrojac"
+                    android:textAlignment="center"
+                    android:layout_width="15dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:background="#fff"
+                    android:text="1" />
+
+                <Button
+                    android:onClick="kafaVise"
+                    android:layout_width="36dp"
+                    android:layout_height="38dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:text="-"
+                    android:layout_marginLeft="8dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:visibility="gone"
+                android:id="@+id/maroco2"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="9dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2 kafa" />
+
+                <CheckBox
+                    android:id="@+id/marocoSlag2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="12dp"
+                    android:checked="false"
+                    android:text="slag"
+                    android:buttonTint="#222"
+                    android:textSize="24sp" />
+
+                <CheckBox
+                    android:id="@+id/marocoSecer2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="12dp"
+                    android:buttonTint="#222"
+                    android:checked="false"
+                    android:text="secer"
+                    android:textSize="24sp" />
+
+
+            </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/Instant"
@@ -602,6 +955,123 @@
                     android:textColor="@android:color/black"
                     android:textSize="24sp"
                     android:textStyle="bold" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:visibility="gone"
+                android:id="@+id/instant1"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:orientation="horizontal">
+
+
+                <TextView
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="9dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1 kafa" />
+
+                <CheckBox
+                    android:id="@+id/instantSlag1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="12dp"
+                    android:buttonTint="#222"
+                    android:checked="false"
+                    android:text="slag"
+                    android:textSize="24sp" />
+
+                <CheckBox
+                    android:buttonTint="#222"
+                    android:id="@+id/instantSecer1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="12dp"
+                    android:checked="false"
+                    android:text="secer"
+                    android:textSize="24sp" />
+
+                <Button
+                    android:onClick="kafaManje"
+                    android:layout_width="35dp"
+                    android:layout_height="38dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:text="+"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginLeft="20dp" />
+
+                <TextView
+                    android:id="@+id/instantBrojac"
+                    android:textAlignment="center"
+                    android:layout_width="15dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:background="#fff"
+                    android:text="1" />
+
+                <Button
+                    android:onClick="kafaVise"
+                    android:layout_width="36dp"
+                    android:layout_height="38dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:text="-"
+                    android:layout_marginLeft="8dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:visibility="gone"
+                android:id="@+id/instant2"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="9dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2 kafa" />
+
+                <CheckBox
+                    android:id="@+id/instantSlag2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="12dp"
+                    android:checked="false"
+                    android:text="slag"
+                    android:buttonTint="#222"
+                    android:textSize="24sp" />
+
+                <CheckBox
+                    android:id="@+id/instantSecer2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="12dp"
+                    android:buttonTint="#222"
+                    android:checked="false"
+                    android:text="secer"
+                    android:textSize="24sp" />
 
 
             </LinearLayout>
@@ -658,6 +1128,123 @@
             </LinearLayout>
 
             <LinearLayout
+                android:visibility="gone"
+                android:id="@+id/frapucino1"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:orientation="horizontal">
+
+
+                <TextView
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="9dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1 kafa" />
+
+                <CheckBox
+                    android:id="@+id/frapucinoSlag1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="12dp"
+                    android:buttonTint="#222"
+                    android:checked="false"
+                    android:text="slag"
+                    android:textSize="24sp" />
+
+                <CheckBox
+                    android:buttonTint="#222"
+                    android:id="@+id/frapucinoSecer1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="12dp"
+                    android:checked="false"
+                    android:text="secer"
+                    android:textSize="24sp" />
+
+                <Button
+                    android:onClick="kafaManje"
+                    android:layout_width="35dp"
+                    android:layout_height="38dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:text="+"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginLeft="20dp" />
+
+                <TextView
+                    android:id="@+id/frapucinoBrojac"
+                    android:textAlignment="center"
+                    android:layout_width="15dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:background="#fff"
+                    android:text="1" />
+
+                <Button
+                    android:onClick="kafaVise"
+                    android:layout_width="36dp"
+                    android:layout_height="38dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:text="-"
+                    android:layout_marginLeft="8dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:visibility="gone"
+                android:id="@+id/frapucino2"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="9dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2 kafa" />
+
+                <CheckBox
+                    android:id="@+id/frapucinoSlag2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="12dp"
+                    android:checked="false"
+                    android:text="slag"
+                    android:buttonTint="#222"
+                    android:textSize="24sp" />
+
+                <CheckBox
+                    android:id="@+id/frapucinoSecer2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="12dp"
+                    android:buttonTint="#222"
+                    android:checked="false"
+                    android:text="secer"
+                    android:textSize="24sp" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
                 android:id="@+id/Brazil"
                 android:onClick="Kafa"
                 android:layout_width="match_parent"
@@ -705,8 +1292,142 @@
                     android:textSize="24sp"
                     android:textStyle="bold" />
 
+            </LinearLayout>
+
+            <LinearLayout
+                android:visibility="gone"
+                android:id="@+id/brazil1"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:orientation="horizontal">
+
+
+                <TextView
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="9dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1 kafa" />
+
+                <CheckBox
+                    android:id="@+id/brazilSlag1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="12dp"
+                    android:buttonTint="#222"
+                    android:checked="false"
+                    android:text="slag"
+                    android:textSize="24sp" />
+
+                <CheckBox
+                    android:buttonTint="#222"
+                    android:id="@+id/brazilSecer1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="12dp"
+                    android:checked="false"
+                    android:text="secer"
+                    android:textSize="24sp" />
+
+                <Button
+                    android:onClick="kafaManje"
+                    android:layout_width="35dp"
+                    android:layout_height="38dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:text="+"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginLeft="20dp" />
+
+                <TextView
+                    android:id="@+id/brazilBrojac"
+                    android:textAlignment="center"
+                    android:layout_width="15dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:background="#fff"
+                    android:text="1" />
+
+                <Button
+                    android:onClick="kafaVise"
+                    android:layout_width="36dp"
+                    android:layout_height="38dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:text="-"
+                    android:layout_marginLeft="8dp" />
 
             </LinearLayout>
+
+            <LinearLayout
+                android:visibility="gone"
+                android:id="@+id/brazil2"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="9dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2 kafa" />
+
+                <CheckBox
+                    android:id="@+id/brazilSlag2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="12dp"
+                    android:checked="false"
+                    android:text="slag"
+                    android:buttonTint="#222"
+                    android:textSize="24sp" />
+
+                <CheckBox
+                    android:id="@+id/brazilSecer2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="12dp"
+                    android:buttonTint="#222"
+                    android:checked="false"
+                    android:text="secer"
+                    android:textSize="24sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="6dp"
+                android:background="@drawable/rounded_layout"></LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/pomocni"
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="6dp"
+                android:background="@drawable/rounded_layout"></LinearLayout>
 
 
         </LinearLayout>

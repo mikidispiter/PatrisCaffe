@@ -1,5 +1,6 @@
 package com.example.mikidispiter.patriscaffe
 
+import android.graphics.Color
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.ContactsContract
@@ -24,14 +25,20 @@ class Meni : AppCompatActivity() {
     }
 
 //Inicializacia promenljivih aj valsov
-
-    var lista2 = ArrayList<LinearLayout>(20)
-    var lista3 = ArrayList<TextView>(20)
-    var lista4 = ArrayList<CheckBox>(20)
+var listaPodMenii = ArrayList<LinearLayout>(20)
+    var listaBrojaci = ArrayList<TextView>(20)
+    var listaDodaci2PodMeni = ArrayList<CheckBox>(20)
     var listaDodaci = ArrayList<ArrayList<CheckBox>>(20)
     var listaCena = ArrayList<TextView>(20)
     var turskaDodaci = ArrayList<CheckBox>(4)
     var latteDodaci = ArrayList<CheckBox>(4)
+    var capucinoDodaci = ArrayList<CheckBox>(4)
+    var mocaDodaci = ArrayList<CheckBox>(4)
+    var marocoDodaci = ArrayList<CheckBox>(4)
+    var instantDodaci = ArrayList<CheckBox>(4)
+    var frapucinoDodaci = ArrayList<CheckBox>(4)
+    var brazilDodaci = ArrayList<CheckBox>(4)
+
 
     var kava: Int = 8
     var counterbieda = 1
@@ -45,18 +52,32 @@ class Meni : AppCompatActivity() {
         if (counterbieda < 2) {
             counterbieda += 1
 
+//            secke dodatke v kazdom podmeniu posebne za kazdu kavu sortiranie (a1 a2 a3 a4)
             turskaDodaci.addAll(listOf(turskaSlag1, turskaSecer1, turskaSlag2, turskaSecer2))
             latteDodaci.addAll(listOf(latteSlag1, latteSecer1, latteSlag2, latteSecer2))
+            capucinoDodaci.addAll(listOf(capucinoSlag1, capucinoSecer1, capucinoSlag2, capucinoSecer2))
+            mocaDodaci.addAll(listOf(mocaSlag1, mocaSecer1, mocaSlag2, mocaSecer2))
+            marocoDodaci.addAll(listOf(marocoSlag1, marocoSecer1, marocoSlag2, marocoSecer2))
+            instantDodaci.addAll(listOf(instantSlag1, instantSecer1, instantSlag2, instantSecer2))
+            frapucinoDodaci.addAll(listOf(frapucinoSlag1, frapucinoSecer1, frapucinoSlag2, frapucinoSecer2))
+            brazilDodaci.addAll(listOf(brazilSlag1, brazilSecer1, brazilSlag2, brazilSecer2))
 
-            lista2.addAll(listOf(turska2, latte2, turska1, latte1))
+//            secke podmenii (sortiranie a1 a2 b1 b2)
+            listaPodMenii.addAll(listOf(turska1, turska2, latte1, latte2, capucino1, capucino2, moca1, moca2, maroco1, maroco2,
+                    instant1, instant2, frapucino1, frapucino2, brazil1, brazil2))
 
-            lista3.addAll(listOf(turskaBrojac, latteBrojac))
+//            textview brojaci
+            listaBrojaci.addAll(listOf(turskaBrojac, latteBrojac, capucinoBrojac, mocaBrojac, marocoBrojac, instantBrojac, frapucinoBrojac, brazilBrojac))
 
-            lista4.addAll(listOf(turskaSecer2, turskaSlag2, latteSecer2, latteSlag2))
 
-            listaDodaci.addAll(listOf(turskaDodaci, latteDodaci))
+//            secke dodatke v kazdom podmeniu dovena
+            listaDodaci.addAll(listOf(turskaDodaci, latteDodaci, capucinoDodaci, mocaDodaci, marocoDodaci, instantDodaci, frapucinoDodaci, brazilDodaci))
 
-            listaCena.addAll(listOf(cenaTurska, cenaLatte))
+            //            secke dodatke v druhom podmeniu sortiranie a1 a2 b1 b2
+            for (i in listaDodaci.indices) for (j in listaDodaci[i].indices) if (j > 1) listaDodaci2PodMeni.add(listaDodaci[i][j])
+
+//            textview ceni
+            listaCena.addAll(listOf(cenaTurska, cenaLatte, cenaCapucino, cenaMoca, cenaMaroco, cenaInstant, cenaFrapucino, cenaBrazil))
         }
     }
 
@@ -64,67 +85,65 @@ class Meni : AppCompatActivity() {
     //    Tento selektor bude robit zakazdim ked sa klikne edom z hlavnich layoutov kazdej vrste kave
     fun Kafa(view: View) {
         if (kava == 8) {
-            when (view) {
-                Turska -> kava = 0
-                Latte -> kava = 1
-                Capucino -> kava = 2
-                Moca -> kava = 3
-                Maroco -> kava = 4
-                Instant -> kava = 5
-                Frapucino -> kava = 6
-                Brazil -> kava = 7
-                else -> kava = 8
+            kava = when (view) {
+                Turska -> 0
+                Latte -> 1
+                Capucino -> 2
+                Moca -> 3
+                Maroco -> 4
+                Instant -> 5
+                Frapucino -> 6
+                Brazil -> 7
+                else -> 8
             }
-        } else kava = 8
-        managePrevs()
+            managePrevs()
+        } else closeAllPrevs()
     }
 
 
     //    Upravljania z prikazom pod-meniov (otvori odhovarajuci alebo zatvori secke u zavisnosti od selektovanej kave)
     fun managePrevs() {
-        if (kava < 8) lista2[kava + lista2.size / 2].visibility = View.VISIBLE
-        else closeAllPrevs()
+        if (kava < 8) listaPodMenii[((kava + 1) * 2) - 2].visibility = View.VISIBLE
+        if (kava == 7) scrollView2.scrollTo(0, pomocni.bottom)
     }
 
     //    Zatvarania seckich pod-meniov
     fun closeAllPrevs() {
         brojac = 1
-        for (i in listaDodaci.indices) {
-            for (j in listaDodaci[i].indices) {
-                listaDodaci[i][j].isChecked = false
-            }
-        }
-        for (i in lista2) {
-            i.visibility = View.GONE
-        }
-        for (i in lista3) {
-            i.text = brojac.toString()
-        }
+
+        for (i in listaDodaci[kava]) i.isChecked = false
+
+        listaPodMenii[((kava + 1) * 2) - 2].visibility = View.GONE
+        listaPodMenii[((kava + 1) * 2) - 1].visibility = View.GONE
+
+        listaBrojaci[kava].text = brojac.toString()
+
+        kava = 8
     }
 
 
     //    Zveci broj kavov, otvori 2. pod meni, refreshuje brojac
     fun kafaVise(view: View) {
-        brojac = lista3[kava].text.toString().toInt()
+        brojac = listaBrojaci[kava].text.toString().toInt()
         if (brojac < 2) {
             brojac += 1
-            lista3[kava].text = brojac.toString()
-            lista2[kava].visibility = View.VISIBLE
+            listaBrojaci[kava].text = brojac.toString()
+            listaPodMenii[((kava + 1) * 2) - 1].visibility = View.VISIBLE
         }
-
+        if (kava == 7) scrollView2.scrollTo(0, pomocni.bottom)
     }
 
     //    Zmensi broj kavov, zatvori 2. pod meni, vipise novi brojac, *v buducnosti: pozve funkciju za zatvarania checkboxu
     fun kafaManje(view: View) {
-        brojac = lista3[kava].text.toString().toInt()
+        brojac = listaBrojaci[kava].text.toString().toInt()
         if (brojac > 1) {
             brojac -= 1
-            lista3[kava].text = brojac.toString()
-            lista2[kava].visibility = View.GONE
-            lista4[2 * (kava + 1) - 2].isChecked = false
-            lista4[2 * (kava + 1) - 1].isChecked = false
+            listaBrojaci[kava].text = brojac.toString()
+            listaPodMenii[((kava + 1) * 4 / 2) - 1].visibility = View.GONE
+            listaDodaci2PodMeni[2 * (kava + 1) - 2].isChecked = false
+            listaDodaci2PodMeni[2 * (kava + 1) - 1].isChecked = false
         }
-
+        if (kava == 7) scrollView2.scrollTo(0, pomocni.bottom)
     }
 
 
@@ -151,8 +170,8 @@ class Meni : AppCompatActivity() {
         if (dodaci[2]) dodajNaRacun += 10
         if (dodaci[3]) dodajNaRacun += 15
 
-        kava = 8
-        managePrevs()
+
+        closeAllPrevs()
         ukupnaCena += dodajNaRacun
         dodajNaRacun = 0
         buttonPorudzbina.text = ukupnaCena.toString()
