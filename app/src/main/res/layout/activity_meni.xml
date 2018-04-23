@@ -834,6 +834,7 @@
                     android:textSize="24sp" />
 
                 <Button
+                    android:id="@+id/marocoManje"
                     android:onClick="kafaManje"
                     android:layout_width="35dp"
                     android:layout_height="38dp"
@@ -854,6 +855,7 @@
                     android:text="1" />
 
                 <Button
+                    android:id="@+id/marocoVise"
                     android:onClick="kafaVise"
                     android:layout_width="36dp"
                     android:layout_height="38dp"
@@ -1002,6 +1004,7 @@
                     android:textSize="24sp" />
 
                 <Button
+                    android:id="@+id/instantManje"
                     android:onClick="kafaManje"
                     android:layout_width="35dp"
                     android:layout_height="38dp"
@@ -1022,6 +1025,7 @@
                     android:text="1" />
 
                 <Button
+                    android:id="@+id/instantVise"
                     android:onClick="kafaVise"
                     android:layout_width="36dp"
                     android:layout_height="38dp"
@@ -1170,6 +1174,7 @@
                     android:textSize="24sp" />
 
                 <Button
+                    android:id="@+id/frapucinoManje"
                     android:onClick="kafaManje"
                     android:layout_width="35dp"
                     android:layout_height="38dp"
@@ -1190,6 +1195,7 @@
                     android:text="1" />
 
                 <Button
+                    android:id="@+id/frapucinoVise"
                     android:onClick="kafaVise"
                     android:layout_width="36dp"
                     android:layout_height="38dp"
@@ -1337,6 +1343,7 @@
                     android:textSize="24sp" />
 
                 <Button
+                    android:id="@+id/brazilManje"
                     android:onClick="kafaManje"
                     android:layout_width="35dp"
                     android:layout_height="38dp"
@@ -1357,6 +1364,7 @@
                     android:text="1" />
 
                 <Button
+                    android:id="@+id/brazilVise"
                     android:onClick="kafaVise"
                     android:layout_width="36dp"
                     android:layout_height="38dp"

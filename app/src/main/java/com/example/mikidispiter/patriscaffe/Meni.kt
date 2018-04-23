@@ -25,44 +25,43 @@ class Meni : AppCompatActivity() {
     }
 
 //Inicializacia promenljivih aj valsov
-var listaPodMenii = ArrayList<LinearLayout>(20)
-    var listaBrojaci = ArrayList<TextView>(20)
-    var listaDodaci2PodMeni = ArrayList<CheckBox>(20)
-    var listaDodaci = ArrayList<ArrayList<CheckBox>>(20)
-    var listaCena = ArrayList<TextView>(20)
-    var turskaDodaci = ArrayList<CheckBox>(4)
-    var latteDodaci = ArrayList<CheckBox>(4)
-    var capucinoDodaci = ArrayList<CheckBox>(4)
-    var mocaDodaci = ArrayList<CheckBox>(4)
-    var marocoDodaci = ArrayList<CheckBox>(4)
-    var instantDodaci = ArrayList<CheckBox>(4)
-    var frapucinoDodaci = ArrayList<CheckBox>(4)
-    var brazilDodaci = ArrayList<CheckBox>(4)
+lateinit var TurskaK: Kava
+    lateinit var LatteK: Kava
+    lateinit var CapucinoK: Kava
+    lateinit var MocaK: Kava
+    lateinit var MarocoK: Kava
+    lateinit var InstantK: Kava
+    lateinit var FrapucinoK: Kava
+    lateinit var BrazilK: Kava
 
-
-    class Kava(b: TextView, c: LinearLayout, d: LinearLayout, e: CheckBox, f: CheckBox, g: CheckBox, h: CheckBox, i: TextView, j: Button, k: Button, l: Int) {
-        val IsSelected = l
-        val cena = b.text.toString().toInt()
-        val prviPodMeniVidljivost = c.visibility
-        val druhiPodMeniVidljivost = d.visibility
-        val prviSlagCheckT = e.isChecked
-        val prviSecerCheckT = f.isChecked
-        val druhiSlagCheckT = g.isChecked
-        val druhiSecerCheckT = h.isChecked
-        val brojac = i.text.toString().toInt()
-        val manje = j
-        val vise = k
-    }
-
-
-
-
-
-    var kava: Int = 8
+    var selected = false
+    lateinit var kava: Kava
     var counterbieda = 1
     var brojac: Int = 1
     var dodajNaRacun: Int = 0
     var ukupnaCena: Int = 0
+
+
+    class Kava(b: TextView, c: LinearLayout, d: LinearLayout, e: CheckBox, f: CheckBox, g: CheckBox, h: CheckBox, i: TextView) {
+        var cena = b.text.toString().toInt()
+        var prviPodMeniVidljivost: LinearLayout = c
+        var druhiPodMeniVidljivost: LinearLayout = d
+        var prviSlagCheckT: CheckBox = e
+        var prviSecerCheckT: CheckBox = f
+        var druhiSlagCheckT: CheckBox = g
+        var druhiSecerCheckT: CheckBox = h
+        var brojac: TextView = i
+
+
+        fun uncheckDodaci() {
+            prviSlagCheckT.isChecked = false
+            druhiSlagCheckT.isChecked = false
+            prviSecerCheckT.isChecked = false
+            druhiSecerCheckT.isChecked = false
+        }
+    }
+
+
 
     //    Tu sa 1-raz inicializuju listi skrz modularnosti kodu (mali bi bit oznacenie z adekvatnima menami)
 //    Abi sa primenili secke kavi potrebne je len poplnit listi aj linkuvat xml
@@ -70,103 +69,84 @@ var listaPodMenii = ArrayList<LinearLayout>(20)
         if (counterbieda < 2) {
             counterbieda += 1
 
-            var TurskaK = Kava(cenaTurska, turska1, turska2, turskaSlag1, turskaSecer1, turskaSlag2, turskaSecer2, turskaBrojac, turskaManje, turskaVise, 0)
-
-
-
-
-
-//            secke dodatke v kazdom podmeniu posebne za kazdu kavu sortiranie (a1 a2 a3 a4)
-            turskaDodaci.addAll(listOf(turskaSlag1, turskaSecer1, turskaSlag2, turskaSecer2))
-            latteDodaci.addAll(listOf(latteSlag1, latteSecer1, latteSlag2, latteSecer2))
-            capucinoDodaci.addAll(listOf(capucinoSlag1, capucinoSecer1, capucinoSlag2, capucinoSecer2))
-            mocaDodaci.addAll(listOf(mocaSlag1, mocaSecer1, mocaSlag2, mocaSecer2))
-            marocoDodaci.addAll(listOf(marocoSlag1, marocoSecer1, marocoSlag2, marocoSecer2))
-            instantDodaci.addAll(listOf(instantSlag1, instantSecer1, instantSlag2, instantSecer2))
-            frapucinoDodaci.addAll(listOf(frapucinoSlag1, frapucinoSecer1, frapucinoSlag2, frapucinoSecer2))
-            brazilDodaci.addAll(listOf(brazilSlag1, brazilSecer1, brazilSlag2, brazilSecer2))
-//            secke podmenii (sortiranie a1 a2 b1 b2)
-            listaPodMenii.addAll(listOf(turska1, turska2, latte1, latte2, capucino1, capucino2, moca1, moca2, maroco1, maroco2,
-                    instant1, instant2, frapucino1, frapucino2, brazil1, brazil2))
-
-//            textview brojaci
-            listaBrojaci.addAll(listOf(turskaBrojac, latteBrojac, capucinoBrojac, mocaBrojac, marocoBrojac, instantBrojac, frapucinoBrojac, brazilBrojac))
-
-
-//            secke dodatke v kazdom podmeniu dovena
-            listaDodaci.addAll(listOf(turskaDodaci, latteDodaci, capucinoDodaci, mocaDodaci, marocoDodaci, instantDodaci, frapucinoDodaci, brazilDodaci))
-
-            //            secke dodatke v druhom podmeniu sortiranie a1 a2 b1 b2
-            for (i in listaDodaci.indices) for (j in listaDodaci[i].indices) if (j > 1) listaDodaci2PodMeni.add(listaDodaci[i][j])
-
-//            textview ceni
-            listaCena.addAll(listOf(cenaTurska, cenaLatte, cenaCapucino, cenaMoca, cenaMaroco, cenaInstant, cenaFrapucino, cenaBrazil))
+            TurskaK = Kava(cenaTurska, turska1, turska2, turskaSlag1, turskaSecer1, turskaSlag2, turskaSecer2, turskaBrojac)
+            LatteK = Kava(cenaLatte, latte1, latte2, latteSlag1, latteSecer1, latteSlag2, latteSecer2, latteBrojac)
+            CapucinoK = Kava(cenaCapucino, capucino1, capucino2, capucinoSlag1, capucinoSecer1, capucinoSlag2, capucinoSecer2, capucinoBrojac)
+            MocaK = Kava(cenaMoca, moca1, moca2, mocaSlag1, mocaSecer1, mocaSlag2, mocaSecer2, mocaBrojac)
+            MarocoK = Kava(cenaMaroco, maroco1, maroco2, marocoSlag1, marocoSecer1, marocoSlag2, marocoSecer2, marocoBrojac)
+            InstantK = Kava(cenaInstant, instant1, instant2, instantSlag1, instantSecer1, instantSlag2, instantSecer2, instantBrojac)
+            FrapucinoK = Kava(cenaFrapucino, frapucino1, frapucino2, frapucinoSlag1, frapucinoSecer1, frapucinoSlag2, frapucinoSecer2, frapucinoBrojac)
+            BrazilK = Kava(cenaBrazil, brazil1, brazil2, brazilSlag1, brazilSecer1, brazilSlag2, brazilSecer2, brazilBrojac)
         }
     }
 
 
     //    Tento selektor bude robit zakazdim ked sa klikne edom z hlavnich layoutov kazdej vrste kave
     fun Kafa(view: View) {
-        if (kava == 8) {
+        if (!selected) {
             kava = when (view) {
-                Turska -> 0
-                Latte -> 1
-                Capucino -> 2
-                Moca -> 3
-                Maroco -> 4
-                Instant -> 5
-                Frapucino -> 6
-                Brazil -> 7
-                else -> 8
+                Turska -> TurskaK
+                Latte -> LatteK
+                Capucino -> CapucinoK
+                Moca -> MocaK
+                Maroco -> MarocoK
+                Instant -> InstantK
+                Frapucino -> FrapucinoK
+                Brazil -> BrazilK
+                else -> FrapucinoK
             }
             managePrevs()
         } else closeAllPrevs()
+
     }
 
 
     //    Upravljania z prikazom pod-meniov (otvori odhovarajuci alebo zatvori secke u zavisnosti od selektovanej kave)
     fun managePrevs() {
-        if (kava < 8) listaPodMenii[((kava + 1) * 2) - 2].visibility = View.VISIBLE
-        if (kava == 7) scrollView2.scrollTo(0, pomocni.bottom)
+        selected = !selected
+        if (selected) {
+            kava.prviPodMeniVidljivost.visibility = View.VISIBLE
+        }
+//        if (kava == BrazilK || kava == FrapucinoK) scrollView2.scrollTo(0, pomocni.bottom)
     }
 
     //    Zatvarania seckich pod-meniov
     fun closeAllPrevs() {
         brojac = 1
 
-        for (i in listaDodaci[kava]) i.isChecked = false
+        kava.uncheckDodaci()
 
-        listaPodMenii[((kava + 1) * 2) - 2].visibility = View.GONE
-        listaPodMenii[((kava + 1) * 2) - 1].visibility = View.GONE
+        kava.prviPodMeniVidljivost.visibility = View.GONE
+        kava.druhiPodMeniVidljivost.visibility = View.GONE
 
-        listaBrojaci[kava].text = brojac.toString()
+        kava.brojac.text = brojac.toString()
 
-        kava = 8
+        selected = false
     }
 
 
     //    Zveci broj kavov, otvori 2. pod meni, refreshuje brojac
     fun kafaVise(view: View) {
-        brojac = listaBrojaci[kava].text.toString().toInt()
+        brojac = kava.brojac.text.toString().toInt()
         if (brojac < 2) {
             brojac += 1
-            listaBrojaci[kava].text = brojac.toString()
-            listaPodMenii[((kava + 1) * 2) - 1].visibility = View.VISIBLE
+            kava.brojac.text = brojac.toString()
+            kava.druhiPodMeniVidljivost.visibility = View.VISIBLE
         }
-        if (kava == 7) scrollView2.scrollTo(0, pomocni.bottom)
+//        if (kava == BrazilK) scrollView2.scrollTo(0, pomocni.bottom)
     }
 
     //    Zmensi broj kavov, zatvori 2. pod meni, vipise novi brojac, *v buducnosti: pozve funkciju za zatvarania checkboxu
     fun kafaManje(view: View) {
-        brojac = listaBrojaci[kava].text.toString().toInt()
+        brojac = kava.brojac.text.toString().toInt()
         if (brojac > 1) {
             brojac -= 1
-            listaBrojaci[kava].text = brojac.toString()
-            listaPodMenii[((kava + 1) * 4 / 2) - 1].visibility = View.GONE
-            listaDodaci2PodMeni[2 * (kava + 1) - 2].isChecked = false
-            listaDodaci2PodMeni[2 * (kava + 1) - 1].isChecked = false
+            kava.brojac.text = brojac.toString()
+            kava.druhiPodMeniVidljivost.visibility = View.GONE
+            kava.druhiSecerCheckT.isChecked = false
+            kava.druhiSlagCheckT.isChecked = false
         }
-        if (kava == 7) scrollView2.scrollTo(0, pomocni.bottom)
+//        if (kava == BrazilK) scrollView2.scrollTo(0, pomocni.bottom)
     }
 
 
@@ -175,31 +155,29 @@ var listaPodMenii = ArrayList<LinearLayout>(20)
 //    formira cenu shodne vibratej kave aj vibratima dodatkami, vipise cenu
 //    restartuje layouti (selektuvana kava je 8(ani edna z kavov))
     fun dodaj(view: View) {
+        if (selected) {
 
-        var dodaci = ArrayList<Boolean>(4)
-        var dodatak1: Boolean = false
-        var dodatak2: Boolean = false
-        var dodatak3: Boolean = false
-        var dodatak4: Boolean = false
-        dodaci.addAll(listOf(dodatak1, dodatak2, dodatak3, dodatak4))
+            var dodaci = ArrayList<Boolean>(4)
+            var dodatak1: Boolean = kava.prviSlagCheckT.isChecked
+            var dodatak2: Boolean = kava.prviSecerCheckT.isChecked
+            var dodatak3: Boolean = kava.druhiSlagCheckT.isChecked
+            var dodatak4: Boolean = kava.druhiSecerCheckT.isChecked
+            dodaci.addAll(listOf(dodatak1, dodatak2, dodatak3, dodatak4))
 
-        for (i in dodaci.indices) {
-            dodaci[i] = listaDodaci[kava][i].isChecked
+
+            dodajNaRacun += brojac * kava.cena
+            if (dodaci[0]) dodajNaRacun += 10
+            if (dodaci[1]) dodajNaRacun += 15
+            if (dodaci[2]) dodajNaRacun += 10
+            if (dodaci[3]) dodajNaRacun += 15
+
+
+            closeAllPrevs()
+            ukupnaCena += dodajNaRacun
+            dodajNaRacun = 0
+            buttonPorudzbina.text = ukupnaCena.toString()
         }
-
-        dodajNaRacun += brojac * listaCena[kava].text.toString().toInt()
-        if (dodaci[0]) dodajNaRacun += 10
-        if (dodaci[1]) dodajNaRacun += 15
-        if (dodaci[2]) dodajNaRacun += 10
-        if (dodaci[3]) dodajNaRacun += 15
-
-
-        closeAllPrevs()
-        ukupnaCena += dodajNaRacun
-        dodajNaRacun = 0
-        buttonPorudzbina.text = ukupnaCena.toString()
     }
-
 
 }
 
