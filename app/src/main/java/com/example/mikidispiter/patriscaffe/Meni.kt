@@ -40,6 +40,24 @@ var listaPodMenii = ArrayList<LinearLayout>(20)
     var brazilDodaci = ArrayList<CheckBox>(4)
 
 
+    class Kava(b: TextView, c: LinearLayout, d: LinearLayout, e: CheckBox, f: CheckBox, g: CheckBox, h: CheckBox, i: TextView, j: Button, k: Button, l: Int) {
+        val IsSelected = l
+        val cena = b.text.toString().toInt()
+        val prviPodMeniVidljivost = c.visibility
+        val druhiPodMeniVidljivost = d.visibility
+        val prviSlagCheckT = e.isChecked
+        val prviSecerCheckT = f.isChecked
+        val druhiSlagCheckT = g.isChecked
+        val druhiSecerCheckT = h.isChecked
+        val brojac = i.text.toString().toInt()
+        val manje = j
+        val vise = k
+    }
+
+
+
+
+
     var kava: Int = 8
     var counterbieda = 1
     var brojac: Int = 1
@@ -52,6 +70,12 @@ var listaPodMenii = ArrayList<LinearLayout>(20)
         if (counterbieda < 2) {
             counterbieda += 1
 
+            var TurskaK = Kava(cenaTurska, turska1, turska2, turskaSlag1, turskaSecer1, turskaSlag2, turskaSecer2, turskaBrojac, turskaManje, turskaVise, 0)
+
+
+
+
+
 //            secke dodatke v kazdom podmeniu posebne za kazdu kavu sortiranie (a1 a2 a3 a4)
             turskaDodaci.addAll(listOf(turskaSlag1, turskaSecer1, turskaSlag2, turskaSecer2))
             latteDodaci.addAll(listOf(latteSlag1, latteSecer1, latteSlag2, latteSecer2))
@@ -61,7 +85,6 @@ var listaPodMenii = ArrayList<LinearLayout>(20)
             instantDodaci.addAll(listOf(instantSlag1, instantSecer1, instantSlag2, instantSecer2))
             frapucinoDodaci.addAll(listOf(frapucinoSlag1, frapucinoSecer1, frapucinoSlag2, frapucinoSecer2))
             brazilDodaci.addAll(listOf(brazilSlag1, brazilSecer1, brazilSlag2, brazilSecer2))
-
 //            secke podmenii (sortiranie a1 a2 b1 b2)
             listaPodMenii.addAll(listOf(turska1, turska2, latte1, latte2, capucino1, capucino2, moca1, moca2, maroco1, maroco2,
                     instant1, instant2, frapucino1, frapucino2, brazil1, brazil2))
